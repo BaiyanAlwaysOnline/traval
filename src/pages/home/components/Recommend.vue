@@ -17,30 +17,8 @@
 <script>
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      list: [{
-        id: '00001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_250x250_1ab31e91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首站，浪漫的汉阳主题公园'
-      }, {
-        id: '00002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_250x250_1ab31e91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首站，浪漫的汉阳主题公园'
-      }, {
-        id: '00003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_250x250_1ab31e91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首站，浪漫的汉阳主题公园'
-      }, {
-        id: '00004',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_250x250_1ab31e91.jpg',
-        title: '大连圣亚海洋世界',
-        desc: '浪漫大连首站，浪漫的汉阳主题公园'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
