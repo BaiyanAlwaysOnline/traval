@@ -1,6 +1,6 @@
 <template>
     <div class="icons">
-        <swiper>
+        <swiper :options="swiperOption">
         <!-- slides -->
             <swiper-slide  v-for="(page, index) of pages" :key="index">
                 <div class="icon" v-for="item of page" :key="item.id">
@@ -10,6 +10,7 @@
                     <p class="icon-desc">{{ item.desc }}</p>
                 </div>
             </swiper-slide>
+            <div class="swiper-pagination circles"  slot="pagination"></div>
         </swiper>
     </div>
 </template>
@@ -18,6 +19,10 @@ export default {
   name: 'Icons',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination',
+        loop: true
+      },
       list: [{
         id: '0001',
         imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png',
@@ -78,36 +83,42 @@ export default {
 </script>
 <style lang="stylus" scoped>
     @import '~styles/varibles.styl'
+    .icons >>> .swiper-pagination-bullet-active
+      background rgba(0,175,190,.8)
     .icons >>> .swiper-container
       height 0
-      padding-bottom 50%
-    .icon
-      overflow hidden
-      float left
-      width 25%
-      padding-bottom 25%
-      position relative
-      height 0
-      .icons-img
-        position absolute
-        left 0
-        right 0
-        top 0
-        bottom .44rem
-        box-sizing border-box
-        padding .1rem
-        .icon-img-content
-          display block
-          height 100%
-          margin 0 auto
-      .icon-desc
-        position absolute
-        left 0
-        right 0
-        bottom 0
-        line-height .44rem
-        height 0.44rem
-        margin 0 auto
-        color $darkTextColor
-        text-align center
+      padding-bottom 55%
+    .icons
+      margin-top .1rem
+     .icon
+       overflow hidden
+       float left
+       width 25%
+       padding-bottom 25%
+       position relative
+       height 0
+       .icons-img
+         position absolute
+         left 0
+         right 0
+         top 0
+         bottom .44rem
+         box-sizing border-box
+         padding .1rem
+         .icon-img-content
+           display block
+           height 100%
+           margin 0 auto
+       .icon-desc
+         position absolute
+         left 0
+         right 0
+         bottom 0
+         line-height .44rem
+         height 0.44rem
+         margin 0 auto
+         color $darkTextColor
+         text-align center
+     .circles
+         margin-bottom -0.2rem
 </style>
