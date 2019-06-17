@@ -31,7 +31,7 @@ export default {
       text-indent .2rem
     .item-img-wrapper
       overflow hidden
-      padding-bottom 33.9%
+      padding-bottom 37.09%
       height 0
       .item-img
         width 100%
