@@ -20,8 +20,12 @@ export default {
   },
   data () {
     return {
-      touchStatus: false
+      touchStatus: false,
+      startY: 0
     }
+  },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop
   },
   computed: {
     letters () {
@@ -43,9 +47,8 @@ export default {
     },
     handleMove (e) {
       if (this.touchStatus) {
-        const startY = this.$refs['A'][0].offsetTop
         const endY = e.touches[0].clientY
-        const resultY = Math.floor((endY - startY) / 20)
+        const resultY = Math.floor((endY - this.startY) / 20)
         if (resultY >= 0 && resultY < 23) {
           const element = this.letters[resultY]
           this.$emit('change', element)
