@@ -38,7 +38,6 @@ export default {
       axios.get('/api/index.json').then(this.getHomeInfoSuccs)
     },
     getHomeInfoSuccs (res) {
-      console.log(res)
       const resdata = res.data
       if (resdata.ret && resdata.data) {
         const data = resdata.data
