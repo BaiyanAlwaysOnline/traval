@@ -21,7 +21,8 @@ export default {
   data () {
     return {
       touchStatus: false,
-      startY: 0
+      startY: 0,
+      timer: null
     }
   },
   updated () {
@@ -47,12 +48,17 @@ export default {
     },
     handleMove (e) {
       if (this.touchStatus) {
-        const endY = e.touches[0].clientY
-        const resultY = Math.floor((endY - this.startY) / 20)
-        if (resultY >= 0 && resultY < 23) {
-          const element = this.letters[resultY]
-          this.$emit('change', element)
+        if (this.timer) {
+          clearTimeout(this.timer)
         }
+        this.timer = setTimeout(() => {
+          const endY = e.touches[0].clientY
+          const resultY = Math.floor((endY - this.startY) / 20)
+          if (resultY >= 0 && resultY < 23) {
+            const element = this.letters[resultY]
+            this.$emit('change', element)
+          }
+        }, 15)
       }
     },
     handleEnd () {
