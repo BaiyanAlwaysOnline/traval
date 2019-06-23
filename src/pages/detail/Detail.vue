@@ -1,14 +1,14 @@
 <template>
   <div>
-    <header></header>
-    <banner></banner>
+    <detail-banner></detail-banner>
+    <detail-header></detail-header>
     <div class="content"></div>
   </div>
 </template>
 
 <script>
-import Banner from './components/Banner'
-import Header from './components/Header'
+import DetailBanner from './components/Banner'
+import DetailHeader from './components/Header'
 
 export default {
   name: 'Detail',
@@ -18,8 +18,8 @@ export default {
     }
   },
   components: {
-    Banner,
-    Header
+    DetailBanner,
+    DetailHeader
   }
 }
 </script>

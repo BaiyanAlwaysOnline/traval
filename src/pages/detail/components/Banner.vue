@@ -1,13 +1,6 @@
 <template>
     <div>
       <div class="banner">
-      <router-link
-      :to="'/'"
-      class="banner-back"
-      tag="div"
-      >
-        <div class='iconfont item-back'>&#xe624;</div>
-      </router-link>
       <img class="banner-img" src="//img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_600x330_f922b488.jpg" @click="handleClick">
       <div class="banner-info">
         <div class="banner-num">
@@ -53,15 +46,6 @@ export default {
     position relative
     .banner-img
       width 100%
-    .banner-back
-      position absolute
-      left 8px
-      top 6px
-      .item-back
-        font-size 20px
-        font-weight bold
-        color #fff
-        cursor pointer
     .banner-info
       position absolute
       bottom 0
