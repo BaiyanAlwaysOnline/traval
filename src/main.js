@@ -10,11 +10,13 @@ import 'styles/border.css'
 import 'styles/reset.css'
 import 'styles/iconfont.css'
 import 'swiper/dist/css/swiper.css'
+import axios from 'axios'
 
 // 阻止启动生产消息，常用作指令。
 Vue.config.productionTip = false
 fastClick.attach(document.body)
 Vue.use(VueAwesomeSwiper)
+Vue.prototype.$http = axios
 
 /* eslint-disable no-new */
 new Vue({

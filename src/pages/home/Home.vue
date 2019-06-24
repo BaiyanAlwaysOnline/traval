@@ -16,6 +16,7 @@ import HomeRecommend from './components/Recommend'
 import HomeWeekend from './components/Weekend'
 import axios from 'axios'
 import { mapState } from 'vuex'
+axios.defaults.headers.get['Content-Type'] = 'application/x-www-form-urlencoded'
 export default {
   name: 'Home',
   components: {
@@ -39,7 +40,9 @@ export default {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json?city=' + this.city).then(this.getHomeInfoSuccs)
+      axios
+        .get('/api/index.json?city=' + this.city)
+        .then(this.getHomeInfoSuccs)
     },
     getHomeInfoSuccs (res) {
       const resdata = res.data

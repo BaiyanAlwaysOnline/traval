@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-link
-    to="'/'"
+    :to="'/'"
     class="header-back"
     tag="div"
     v-show="isShow"
@@ -40,7 +40,6 @@ export default {
         this.opacityStyle = { opacity }
         this.isShow = false
         // }, 30)
-        console.log(this.opacityStyle)
       } else {
         this.isShow = true
       }
@@ -48,6 +47,9 @@ export default {
   },
   activated () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  deactivated () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -59,7 +61,6 @@ export default {
       left 8px
       top 6px
       .item-back
-        font-weight bold
         color #fff
         cursor pointer
   .headTitle

@@ -9,13 +9,16 @@
         </div>
         <div class="banner-title">故宫(AAAAA景区)</div>
       </div>
-    </div>
-    <gallery v-show="isShow" :imgArr="imgs" @close="handleClose"></gallery>
+      </div>
+      <fade-animation>
+        <gallery v-show="isShow" :imgArr="imgs" @close="handleClose"></gallery>
+      </fade-animation>
     </div>
 </template>
 
 <script>
-import Gallery from 'gallery/gallery'
+import Gallery from 'common/gallery/gallery'
+import FadeAnimation from 'common/animation/fade'
 export default {
   name: 'Banner',
   data () {
@@ -25,7 +28,8 @@ export default {
     }
   },
   components: {
-    Gallery
+    Gallery,
+    FadeAnimation
   },
   methods: {
     handleClick () {
